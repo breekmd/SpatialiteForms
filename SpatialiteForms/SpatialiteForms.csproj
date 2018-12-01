@@ -28,20 +28,19 @@
 
     <LangVersion>latest</LangVersion>
     
-    <!--TODO: Fill these in-->
-    <PackageLicenseUrl></PackageLicenseUrl>
-    <PackageProjectUrl></PackageProjectUrl>
+    <PackageLicenseUrl>https://github.com/breekmd/SpatialiteForms/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/breekmd/SpatialiteForms</PackageProjectUrl>
     <RepositoryUrl></RepositoryUrl>
-    <PackageReleaseNotes>RELEASE NOTES</PackageReleaseNotes>
+    <PackageReleaseNotes>Initial release</PackageReleaseNotes>
     <PackageIconUrl></PackageIconUrl>
-    <PackageTags>xamarin, windows, ios, android, xamarin.forms, plugin, SpatialiteForms</PackageTags>
+    <PackageTags>xamarin,ios, android, xamarin.forms, plugin, SpatialiteForms</PackageTags>
     
-    <Title>SpatialiteForms Plugin for Xamarin and Windows</Title>
-    <Summary>Summary of nuget</Summary>
+    <Title>SpatialiteForms Plugin for Xamarin Forms</Title>
+    <Summary>Enables spatialite on Android and iOS via Xamarin Forms</Summary>
     <Description>Spatialite extension for Xamarin Forms (Android &amp; iOS)</Description>
     
     
-    <Owners>YOU</Owners>
+    <Owners>breekmd</Owners>
     <Authors>breekmd</Authors>
     <Copyright>Copyright 2018</Copyright>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
