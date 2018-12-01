@@ -1,10 +1,10 @@
 # SpatialiteForms
-A nuget package that enables spatialite for Xamarin Forms. As an example this allows to do reverse geolocation offline on mobile devices (this barely scratches the surface of spatialite, but it's a very common usecase for mobile dev)
+A nuget package that enables spatialite for Xamarin Forms. As an example this allows to do reverse geolocation offline on mobile devices (this barely scratches the surface of Spatialite, but it's a very common usecase for mobile dev)
 
 It's entirely based on:
 
- - https://github.com/praeclarum/sqlite-net and
- - https://www.gaia-gis.it/fossil/libspatialite/index
+ - [sqlite-net](https://github.com/praeclarum/sqlite-net) and
+ - [Spatialite](https://www.gaia-gis.it/fossil/libspatialite/index)
 
 **If you find this library useful, please support the above two projects.**
 
@@ -15,7 +15,8 @@ To enable this functionality native libraries/framework is required (apart from 
  1. Get **Android** libraries from  [here](https://github.com/breekmd/SpatialiteForms/tree/master/NativeLibraries/android) and add under libs folder, with build action as "AndroidNativeLibrary"
  2. Get **iOS** framework from [here](https://github.com/breekmd/SpatialiteForms/tree/master/NativeLibraries/ios/iOSSpatialite.framework) and add as Native Reference to iOS project
 
-Supported architectures:
+
+<h2>Supported architecture </h2>
 
 | Platform | Arch |
 | ------------- | ------------- |
@@ -24,7 +25,7 @@ Supported architectures:
 | iOS | x86_64 |
 | iOS | arm64 |
 
-Supported spatialite functionality:
+<h2>Supported Spatialite functionality</h2>
 
 |Functionality| Android | iOS |  
 |--|--|--|
@@ -39,7 +40,8 @@ Supported spatialite functionality:
 |  HasMathSQL|  <ul><li> - [x] </li></ul> | <ul><li> - [x] </li></ul> |
 |  HasProj| <ul><li> - [x] </li></ul> |  <ul><li> - [x] </li></ul>|
 
-Spatialite component versions:
+
+<h2>Spatialite component versions </h2>
 
 |Component| Android version | iOS version |  
 |--|--|--|
@@ -54,9 +56,12 @@ Current versioning/capabilities information can be accessed via **SpatialiteInfo
 
 SpatialiteForms also allows to use "pre-packaged" database files using **Assets** folder in Android and **Resources** folder for iOS.
 
-Example (using [countryData.db](https://github.com/breekmd/SpatialiteForms/tree/master/ExampleSpatialDb)) on how to prepackage a database with geometry data within the xamarin app and to get a spatialite-capable SQLiteConnection.
+<h2>Usage<h2>
+ <p>
+Example using [countryData.db](https://github.com/breekmd/SpatialiteForms/tree/master/ExampleSpatialDb) on how to prepackage a database with geometry data within the xamarin app and to get a Spatialite-capable SQLiteConnection.
 
  1. Add countryData.db under **Assets** folder on Android and **Resources** folder on iOS
+ 
  2. Define a Region class
  
  ```csharp
@@ -65,7 +70,7 @@ public class Region {
 }
   ```
   
- 4.  Get the spatialite capable SQLiteConnection
+ 3.  Get the Spatialite capable SQLiteConnection
 ```csharp
 var dbPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "countryData.db");
 SpatialiteConnection spatialite = CrossSpatialiteForms.Current.GetSpatialiteConnection(dbPath, "countryData.db", true);
@@ -75,7 +80,15 @@ var region = spatialite.SQLiteConnection.Query<Region>("select name from region 
 ```
 the result region should have the name of North Dakota
 
-Again this is only a small thing of what spatialite is capable of, please check official spatialite documentation for more details.
+Again this is only a small thing of what spatialite is capable of, please check official Spatialite documentation for more details.
+</p>
 
-**If you believe that I have infringed your copyright in any way please let me know and I will make remove any code that is your copyright ASAP.**
+<h2>License<h2>
+<p>
+ This project is licensed under [GPL3](https://github.com/breekmd/SpatialiteForms/blob/master/LICENSE/)
+ 
+Spatialite libraries have been compiled from original source code and no changes was made to it.
+ 
+If you believe that I have infringed your copyright in any way please let me know and I will make remove any code that is your copyright ASAP.
+ </p>
  
