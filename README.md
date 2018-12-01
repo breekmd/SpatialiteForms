@@ -60,6 +60,8 @@ SpatialiteForms also allows to use "pre-packaged" database files using **Assets*
 
 Example using [countryData.db](https://github.com/breekmd/SpatialiteForms/tree/master/ExampleSpatialDb) on how to prepackage a database with geometry data within the xamarin app and to get a Spatialite-capable SQLiteConnection.
 
+Database countryData was created using Spatialite-GUI (very powerful tool) through which shape data was imported (shape data originated from [here](https://www.naturalearthdata.com/downloads/10m-cultural-vectors/))
+
  1. Add countryData.db under **Assets** folder on Android and **Resources** folder on iOS
  
  2. Define a Region class
