@@ -1,5 +1,5 @@
 # SpatialiteForms
-A nuget package that enables spatialite for Xamarin Forms. As an example this allows to do offline reverse geocoding on mobile devices (this barely scratches the surface of Spatialite, but it's a very common usecase for mobile dev)
+A [nuget package](https://www.nuget.org/packages/Plugin.SpatialiteForms/) that enables spatialite for Xamarin Forms. As an example this allows to do offline reverse geocoding on mobile devices (this barely scratches the surface of Spatialite, but it's a very common usecase for mobile dev)
 
 It's entirely based on:
 
@@ -82,6 +82,9 @@ the result region should have the name of North Dakota
 
 Again this is only a small thing of what spatialite is capable of, please check official Spatialite documentation for more details.
 
+<h2>Nuget package</h2>
+
+https://www.nuget.org/packages/Plugin.SpatialiteForms/
 
 <h2>License</h2>
 
