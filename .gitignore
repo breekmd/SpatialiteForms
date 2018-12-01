@@ -16,7 +16,6 @@
 [Rr]elease/
 [Rr]eleases/
 x64/
-x86/
 bld/
 [Bb]in/
 [Oo]bj/
@@ -234,4 +233,3 @@ _Pvt_Extensions
 
 # FAKE - F# Make
 .fake/
- !NativeLibraries\android\x86
