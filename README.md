@@ -54,10 +54,10 @@ There's small version mismatches which shouldn't cause problems, but please rais
 
 Current versioning/capabilities information can be accessed via **SpatialiteInfo** property, available in the **SpatialiteConnection** class.
 
-SpatialiteForms also allows to use "pre-packaged" database files using **Assets** folder in Android and **Resources** folder for iOS.
+SpatialiteForms also allows to use "pre-packaged" database files using **Assets** folder in Android and **Resources** folder for iOS. 
 
-<h2>Usage<h2>
- <p>
+<h2>Usage</h2>
+
 Example using [countryData.db](https://github.com/breekmd/SpatialiteForms/tree/master/ExampleSpatialDb) on how to prepackage a database with geometry data within the xamarin app and to get a Spatialite-capable SQLiteConnection.
 
  1. Add countryData.db under **Assets** folder on Android and **Resources** folder on iOS
@@ -81,14 +81,12 @@ var region = spatialite.SQLiteConnection.Query<Region>("select name from region 
 the result region should have the name of North Dakota
 
 Again this is only a small thing of what spatialite is capable of, please check official Spatialite documentation for more details.
-</p>
 
-<h2>License<h2>
-<p>
+
+<h2>License</h2>
+
  This project is licensed under [GPL3](https://github.com/breekmd/SpatialiteForms/blob/master/LICENSE/)
  
 Spatialite libraries have been compiled from original source code and no changes was made to it.
  
 If you believe that I have infringed your copyright in any way please let me know and I will make remove any code that is your copyright ASAP.
- </p>
- 
