@@ -87,6 +87,6 @@ Again this is only a small thing of what spatialite is capable of, please check 
 
  This project is licensed under [GPL3](https://github.com/breekmd/SpatialiteForms/blob/master/LICENSE/)
  
-Spatialite libraries have been compiled from original source code and no changes was made to it.
+Spatialite libraries have been compiled from original source code and no changes were made to it.
  
-If you believe that I have infringed your copyright in any way please let me know and I will make remove any code that is your copyright ASAP.
+If you believe that I have infringed your copyright in any way please let me know and I will remove any code that is your copyright ASAP.
