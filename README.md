@@ -16,7 +16,7 @@ To enable this functionality native libraries/framework is required (apart from 
  2. Get **iOS** framework from [here](https://github.com/breekmd/SpatialiteForms/tree/master/NativeLibraries/ios/iOSSpatialite.framework) and add as Native Reference to iOS project
 
 
-<h2>Supported architecture </h2>
+<h2>Targeted architecture (these architecture are compatible with most devices)</h2>
 
 | Platform | Arch |
 | ------------- | ------------- |
