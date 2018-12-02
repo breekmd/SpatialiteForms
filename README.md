@@ -12,18 +12,29 @@ What this means is that it exposes a SQLiteConnection that supports spatial SQL 
 
 To enable this functionality native libraries/framework is required (apart from the nuget package itself)  :
 
- 1. Get **Android** libraries from  [here](https://github.com/breekmd/SpatialiteForms/tree/master/NativeLibraries/android) and add under libs folder, with build action as "AndroidNativeLibrary"
+ 1. Get **Android** libraries from  [here](https://github.com/breekmd/SpatialiteForms/tree/master/NativeLibraries/android) and add under libs folder, with build action as "AndroidNativeLibrary". Folder structure under Android project:
+ ```
+   .
+  ├── Assets
+  ├── ...
+  ├── libs                    
+  │   ├── armeabi-v7a       
+  │       ├── libspatialite.so   
+  │   ├── x86
+  │       ├── libspatialite.so   
+  └── ...
+  ```
  2. Get **iOS** framework from [here](https://github.com/breekmd/SpatialiteForms/tree/master/NativeLibraries/ios/iOSSpatialite.framework) and add as Native Reference to iOS project
 
 
-<h2>Targeted architecture (these architecture are compatible with most devices)</h2>
+<h2>Targeted architecture (these architectures are compatible with most devices)</h2>
 
-| Platform | Arch |
-| ------------- | ------------- |
-| Android | x86 |
-| Android | armeabi-v7a|
-| iOS | x86_64 |
-| iOS | arm64 |
+| Platform | Arch | Comments |
+| ------------- | ------------- |------------- |
+| Android | x86 | will also run on x86_64 |
+| Android | armeabi-v7a| will also run on arm64-v8a |
+| iOS | x86_64 | for emulators |
+| iOS | arm64 | for devices starting with iPhone 5s |
 
 <h2>Supported Spatialite functionality</h2>
 
@@ -62,13 +73,13 @@ Example using [countryData.db](https://github.com/breekmd/SpatialiteForms/tree/m
 
 Database countryData was created using Spatialite-GUI (very powerful tool) through which shape data was imported (shape data originated from [here](https://www.naturalearthdata.com/downloads/10m-cultural-vectors/))
 
- 1. Add countryData.db under **Assets** folder on Android and **Resources** folder on iOS
+ 1. Add countryData.db under **Assets** folder on Android (build action - Android asset) and **Resources** folder on iOS (build action - Bundle resource)
  
  2. Define a Region class
  
  ```csharp
 public class Region {  
-  public string Name { get; set; }  
+   public string Name { get; set; }  
 }
   ```
   
