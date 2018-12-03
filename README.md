@@ -7,7 +7,7 @@ It's entirely based on:
  - [Spatialite](https://www.gaia-gis.it/fossil/libspatialite/index) and 
  - [SQLitePCL.raw](https://github.com/ericsink/SQLitePCL.raw) for SQLitePCLRaw.bundle_e_sqlite3 - which gives better iOS support for sqlite extensions
 
-**If you find this library useful, please support the above two projects.**
+**If you find this library useful, please support the above projects.**
 
 What this means is that it exposes a SQLiteConnection that supports spatial SQL capabilities.
 
