@@ -3,7 +3,7 @@ A [nuget package](https://www.nuget.org/packages/Plugin.SpatialiteForms/) that e
 
 It's entirely based on:
 
- - [sqlite-net](https://github.com/praeclarum/sqlite-net) and
+ - [sqlite-net-base](https://github.com/praeclarum/sqlite-net) and
  - [Spatialite](https://www.gaia-gis.it/fossil/libspatialite/index) and 
  - [SQLitePCL.raw](https://github.com/ericsink/SQLitePCL.raw) for SQLitePCLRaw.bundle_e_sqlite3 - which gives better iOS supprort for sqlite extensions
 
