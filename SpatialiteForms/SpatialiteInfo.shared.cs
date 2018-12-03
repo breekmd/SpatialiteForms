@@ -31,6 +31,8 @@ namespace Plugin.SpatialiteForms
                                         "hasgeostrunk() as hasgeostrunk, haslibxml2() as haslibxml2," +
                                         "hasepsg() as hasepsg, hasfreexl() as hasfreexl ;";
 
+        internal static bool BatteriesInit { get; set; } = false;
+
         public string Spatialite { get; set; }
         public string Proj4 { get; set; }
         public string Geos { get; set; }

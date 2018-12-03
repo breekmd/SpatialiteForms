@@ -14,10 +14,10 @@
     <PackageId>Plugin.SpatialiteForms</PackageId>
     
     <Product>$(AssemblyName) ($(TargetFramework))</Product>
-    <AssemblyVersion>0.0.2</AssemblyVersion>
-    <AssemblyFileVersion>0.0.2</AssemblyFileVersion>
-    <Version>0.0.2</Version>
-    <PackageVersion>0.0.2</PackageVersion>
+    <AssemblyVersion>0.0.3</AssemblyVersion>
+    <AssemblyFileVersion>0.0.3</AssemblyFileVersion>
+    <Version>0.0.3</Version>
+    <PackageVersion>0.0.3</PackageVersion>
     <PackOnBuild>true</PackOnBuild>
     <NeutralLanguage>en</NeutralLanguage>
     <LangVersion>default</LangVersion>

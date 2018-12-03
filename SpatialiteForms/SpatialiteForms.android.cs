@@ -59,6 +59,13 @@ namespace Plugin.SpatialiteForms
                 }
             }
 
+            if (!SpatialiteInfo.BatteriesInit)
+            {
+                SQLitePCL.Batteries.Init();
+
+                SpatialiteInfo.BatteriesInit = true;
+            }
+
             SQLiteConnection sqliteConnection = new SQLiteConnection(dbPath);
 
             sqliteConnection.EnableLoadExtension(true);

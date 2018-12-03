@@ -45,6 +45,13 @@ namespace Plugin.SpatialiteForms
                 File.Copy(existingDb, dbPath);
             }
 
+            if (!SpatialiteInfo.BatteriesInit)
+            {
+                SQLitePCL.Batteries.Init();
+
+                SpatialiteInfo.BatteriesInit = true;
+            }
+
             //different library names based on arch
             string x86_64 = "mod_spatialite_x86_64.7.dylib";
             string arm64 = "mod_spatialite_arm64.7.dylib";
