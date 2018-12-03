@@ -14,10 +14,10 @@
     <PackageId>Plugin.SpatialiteForms</PackageId>
     
     <Product>$(AssemblyName) ($(TargetFramework))</Product>
-    <AssemblyVersion>0.0.1.0</AssemblyVersion>
-    <AssemblyFileVersion>0.0.1.0</AssemblyFileVersion>
-    <Version>0.0.1.0</Version>
-    <PackageVersion>0.0.1.0</PackageVersion>
+    <AssemblyVersion>0.0.1.1</AssemblyVersion>
+    <AssemblyFileVersion>0.0.1.1</AssemblyFileVersion>
+    <Version>0.0.1.1</Version>
+    <PackageVersion>0.0.1.1</PackageVersion>
     <PackOnBuild>true</PackOnBuild>
     <NeutralLanguage>en</NeutralLanguage>
     <LangVersion>default</LangVersion>
@@ -31,9 +31,9 @@
     <PackageLicenseUrl>https://github.com/breekmd/SpatialiteForms/blob/master/LICENSE</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/breekmd/SpatialiteForms</PackageProjectUrl>
     <RepositoryUrl></RepositoryUrl>
-    <PackageReleaseNotes>Initial release</PackageReleaseNotes>
+    <PackageReleaseNotes>Switched from sqlite-net-pcl to sqlite-net-base + bundle_e_sqlite3 (for better iOS compatibility)</PackageReleaseNotes>
     <PackageIconUrl></PackageIconUrl>
-    <PackageTags>xamarin,ios, android, xamarin.forms, plugin, SpatialiteForms</PackageTags>
+    <PackageTags>xamarin,ios, android, xamarin.forms, plugin, SpatialiteForms, spatialite, geocoding, reverse, offline, geolocation, spatial</PackageTags>
     
     <Title>SpatialiteForms Plugin for Xamarin Forms</Title>
     <Summary>Enables spatialite on Android and iOS via Xamarin Forms</Summary>
@@ -107,7 +107,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="sqlite-net-pcl" Version="1.5.231" />
+    <PackageReference Include="sqlite-net-base" Version="1.5.231" />
+    <PackageReference Include="SQLitePCLRaw.bundle_e_sqlite3" Version="1.1.11" />
   </ItemGroup>
 
   <!--Additional item groups-->
