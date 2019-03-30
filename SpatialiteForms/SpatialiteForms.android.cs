@@ -1,4 +1,4 @@
-﻿/* 
+﻿         /* 
  * This file is part of the SpatialiteForms distribution (https://github.com/breekmd/SpatialiteForms).
  * Copyright (c) 2018 breekmd.
  * 
@@ -35,28 +35,9 @@ namespace Plugin.SpatialiteForms
             //first move the pre-packaged database if it doesnt exist already or if overrideRequired
             if (!string.IsNullOrEmpty(prepackagedDatabaseName) && (!File.Exists(dbPath) || overrideIfPrepackagedExists))
             {
-                if (File.Exists(dbPath))
-                {
-                    File.Delete(dbPath);
-                }
+                DeletePreviousDatabase(dbPath);
 
-                Context context = Android.App.Application.Context;
-
-                if (context != null)
-                {
-                    using (var br = new BinaryReader(context.Assets.Open(prepackagedDatabaseName)))
-                    {
-                        using (var bw = new BinaryWriter(new FileStream(dbPath, FileMode.Create)))
-                        {
-                            byte[] buffer = new byte[2048];
-                            int length = 0;
-                            while ((length = br.Read(buffer, 0, buffer.Length)) > 0)
-                            {
-                                bw.Write(buffer, 0, length);
-                            }
-                        }
-                    }
-                }
+                MoveDatabase(dbPath, prepackagedDatabaseName);
             }
 
             if (!SpatialiteInfo.BatteriesInit)
@@ -84,6 +65,80 @@ namespace Plugin.SpatialiteForms
             catch (Exception e)
             {
                 throw;
+            }
+        }
+
+        private void DeletePreviousDatabase(string dbPath)
+        {
+            if (IsWalFileRequired())
+            {
+                string walPath = GetWalDatabasePath(dbPath);
+
+                if (!string.IsNullOrEmpty(walPath) && File.Exists(walPath))
+                {
+                    File.Delete(walPath);
+                }
+            }
+
+            if (File.Exists(dbPath))
+            {
+                File.Delete(dbPath);
+            }
+        }
+
+        private string GetWalDatabasePath(string dbPath)
+        {
+            string dbName = Path.GetFileNameWithoutExtension(dbPath);
+
+            if (!string.IsNullOrEmpty(dbName))
+            {
+                string walDbName = $"{dbName}-wal";
+                string walPath = dbPath.Replace(dbName, walDbName);
+
+                return walPath;
+            }
+
+            return null;
+        }
+
+        private void MoveDatabase(string dbPath, string prepackagedName)
+        {
+            if (IsWalFileRequired())
+            {
+                string walPath = GetWalDatabasePath(dbPath);
+
+                if(!string.IsNullOrEmpty(walPath) && !string.IsNullOrEmpty(prepackagedName))
+                {
+                    MoveAssetFile(walPath, prepackagedName);
+                }
+            }
+
+            MoveAssetFile(dbPath, prepackagedName);
+        }
+
+        private bool IsWalFileRequired()
+        {
+            return (int)Android.OS.Build.VERSION.SdkInt >= 28;
+        }
+
+        private void MoveAssetFile(string destination, string assetName)
+        {
+            Context context = Android.App.Application.Context;
+
+            if (context != null)
+            {
+                using (var br = new BinaryReader(context.Assets.Open(assetName)))
+                {
+                    using (var bw = new BinaryWriter(new FileStream(destination, FileMode.Create)))
+                    {
+                        byte[] buffer = new byte[2048];
+                        int length = 0;
+                        while ((length = br.Read(buffer, 0, buffer.Length)) > 0)
+                        {
+                            bw.Write(buffer, 0, length);
+                        }
+                    }
+                }
             }
         }
     }
