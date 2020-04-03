@@ -1,0 +1,6 @@
+framework module iOSSpatialite {
+  umbrella header "iOSSpatialite.h"
+
+  export *
+  module * { export * }
+}
